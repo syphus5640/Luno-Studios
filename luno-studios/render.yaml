@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: luno-studios-backend
+    env: node
+    rootDirectory: server
+    buildCommand: npm install
+    startCommand: node index.js
+
+  - type: static
+    name: luno-studios-frontend
+    rootDirectory: .
+    buildCommand: npm install && npm run build
+    publishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: "https://luno-studios-backend.onrender.com"
