@@ -1,0 +1,7 @@
+{
+  "name": "Luno Studios",
+  "description": "A modern, animated business website for Luno Studios featuring AI solutions and web design services.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
