@@ -282,6 +282,13 @@ app.post('/api/book', async (req, res) => {
   }
 });
 
+// --- SERVE VITE FRONTEND ---
+app.use(express.static(path.join(__dirname, "..", "dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "dist", "index.html"));
+});
+
 // Handle Port conflicts gracefully
 const server = app.listen(PORT, (err) => {
     if (err) console.error(err);
